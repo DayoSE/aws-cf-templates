@@ -61,6 +61,9 @@ Resources:
         RestrictPublicBuckets: true
       VersioningConfiguration:
         Status: 'Enabled'
+      Tags:
+        - Key: yor_trace
+          Value: 5eb8daeb-405b-471a-8409-9ec0b7daf3fb
   StateBucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
@@ -126,6 +129,9 @@ Resources:
         SSEEnabled: true
         SSEType: 'KMS'
       TableName: !Ref TerraformStateIdentifier
+      Tags:
+        - Key: yor_trace
+          Value: d333aa88-02d8-4cfd-8cf2-cdff45c68fcf
 Outputs:
   TemplateID:
     Description: 'cloudonaut.io template id.'

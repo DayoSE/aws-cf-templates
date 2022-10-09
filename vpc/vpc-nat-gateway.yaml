@@ -50,11 +50,17 @@ Resources:
     Type: 'AWS::EC2::EIP'
     Properties:
       Domain: vpc
+      Tags:
+        - Key: yor_trace
+          Value: 5532f531-2a4d-4ed1-8c5c-2c47923332df
   NatGateway:
     Type: 'AWS::EC2::NatGateway'
     Properties:
       AllocationId: !GetAtt 'EIP.AllocationId'
       SubnetId: {'Fn::ImportValue': !Sub '${ParentVPCStack}-Subnet${SubnetZone}Public'}
+      Tags:
+        - Key: yor_trace
+          Value: f905d5e8-1135-4f62-af79-3c58221e3931
   Route:
     Type: 'AWS::EC2::Route'
     Properties:
