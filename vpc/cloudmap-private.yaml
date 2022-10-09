@@ -39,6 +39,9 @@ Resources:
       Description: !Ref 'AWS::StackName'
       Vpc: {'Fn::ImportValue': !Sub '${ParentVPCStack}-VPC'}
       Name: !Ref Name
+      Tags:
+        - Key: yor_trace
+          Value: 44a0eb13-42c6-4ef9-aad3-cb76a77a9366
 Outputs:
   TemplateID:
     Description: 'cloudonaut.io template id.'
